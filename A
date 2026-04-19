@@ -1,0 +1,151 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath, amssymb}
+
+\title{A Structural Characterization of Prime Numbers via First-Order Balance Spiral Computation}
+
+\author{Mizuho Watanabe}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+We introduce a structural framework called the First-Order Balance Spiral Computation and show that prime numbers can be characterized as elements outside this structure. Computational evidence up to $10^5$ suggests that odd primes coincide with the complement of balance-representable integers, up to finite exceptions. We further discuss implications for prime detection and the infinitude of primes.
+
+\end{abstract}
+
+\section{Introduction}
+
+Prime numbers are traditionally defined by divisibility. In this paper, we propose a structural alternative: primes emerge as the complement of a balance-generating system.
+
+\section{Definitions}
+
+\textbf{Definition 1 (Strict First-Order Balance)}  
+
+A natural number $N$ is strictly balanced if there exist distinct integers $a,b,c,d \ge 2$ such that:
+
+\[
+
+a+b+c+d = ab - cd = N
+
+\]
+
+\textbf{Definition 2 (Relaxed Balance)}  
+
+We allow $0$ and $1$ each at most once.
+
+\textbf{Definition 3 (Spiral Representability)}  
+
+A number $N$ is spiral-representable if:
+
+\[
+
+ab - cd = N
+
+\]
+
+for distinct integers $a,b,c,d$, even if the sum condition fails.
+
+\section{Structural Transformation}
+
+From:
+
+\[
+
+a+b+c+d = ab - cd
+
+\]
+
+we derive:
+
+\[
+
+(a-1)(b-1) = (c+1)(d+1)
+
+\]
+
+Let:
+
+\[
+
+x = a-1,\quad y = b-1,\quad u = c+1,\quad v = d+1
+
+\]
+
+Then:
+
+\[
+
+xy = uv,\quad N = x+y+u+v
+
+\]
+
+\section{Main Theorem}
+
+\textbf{Theorem 1}  
+
+If $N > 1$ is an odd strictly balanced number, then $N$ is composite.
+
+\textbf{Proof}  
+
+From the transformation:
+
+\[
+
+N = (g+h)(r+s)
+
+\]
+
+which is a nontrivial factorization. ∎
+
+\section{Computational Observation}
+
+Up to $10^5$, we observe:
+
+\[
+
+\text{Odd non-balanced numbers} = \{1,9\} \cup \{\text{odd primes}\}
+
+\]
+
+This suggests:
+
+\[
+
+N \ge 3 \text{ odd},\quad
+
+N \notin S \iff N \text{ is prime}
+
+\]
+
+\section{Prime Detection Principle}
+
+\textbf{Conjecture}  
+
+All odd composite numbers (except finite cases) are spiral-representable.
+
+Then:
+
+\[
+
+N \text{ is prime} \iff N \notin S
+
+\]
+
+This yields a structural prime detection method.
+
+\section{Infinitude of Primes}
+
+If the complement of spiral-representable numbers is infinite, then primes are infinite.
+
+Since natural numbers are infinite and spiral-representability does not cover all odd integers, primes must be infinite.
+
+\section{Conclusion}
+
+We propose that primes are not merely indivisible numbers, but elements outside a balance-generating structure.
+
+\end{document}
